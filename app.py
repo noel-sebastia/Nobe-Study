@@ -40,5 +40,6 @@ def index():
         return render_template('index.html', videos=videos, channel_url=channel_url)
     return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(debug=True, port=3000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 4000))
+    app.run(host="0.0.0.0", port=port)
