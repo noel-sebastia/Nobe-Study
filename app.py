@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template, request
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -66,6 +65,6 @@ def index():
         videos = get_youtube_videos(channel_url)
     return render_template('index.html', videos=videos, channel_url=channel_url)
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     port = int(os.environ.get("PORT", 4000))
     app.run(host="0.0.0.0", port=port)
