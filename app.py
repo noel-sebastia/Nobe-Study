@@ -65,6 +65,6 @@ def index():
         videos = get_youtube_videos(channel_url)
     return render_template('index.html', videos=videos, channel_url=channel_url)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     port = int(os.environ.get("PORT", 4000))
     app.run(host="0.0.0.0", port=port)
