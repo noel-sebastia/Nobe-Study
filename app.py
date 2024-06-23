@@ -20,9 +20,10 @@ def get_youtube_videos(channel_url):
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    
+
     try:
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=options)
     except Exception as e:
         logging.error(f"Error initializing Chrome WebDriver: {e}")
         return []
